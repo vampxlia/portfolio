@@ -1,0 +1,86 @@
+.view-window {
+    position: absolute;
+
+    z-index: 4;
+
+    top: 10vh;
+    left: 25vw;
+
+    width: 55vw;
+    height: 70vh;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    color: #d7d7d7;
+
+    background: rgba(10, 15, 18, 0.9);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+
+    box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.45);
+}
+
+.view-window-header {
+    flex: 0 0 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 10px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.75rem;
+}
+
+.view-window-title {
+    opacity: 0.8;
+}
+
+.view-window-close {
+    width: 24px;
+    height: 24px;
+
+    padding: 0;
+
+    border: 0;
+    border-radius: 3px;
+
+    background: transparent;
+
+    color: #d7d7d7;
+
+    font-size: 1.1rem;
+    line-height: 1;
+
+    cursor: pointer;
+}
+
+.view-window-close:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.view-window-body {
+    flex: 1;
+
+    padding: 2rem;
+
+    overflow-y: auto;
+
+    font-family: "Courier New", Courier, monospace;
+}
+
+.view-window-body.full-content {
+    padding: 0;
+
+    overflow: hidden;
+}

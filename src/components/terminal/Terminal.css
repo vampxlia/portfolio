@@ -1,0 +1,188 @@
+.terminal-window {
+    position: absolute;
+
+    /*
+    top: 5vh;
+    right: 4vw;
+
+    width: 72vw;
+    height: 88vh;
+     */
+
+    width: 95vw;
+    height: 90vh;
+
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+
+    color: #d7d7d7;
+
+    background: rgba(10, 15, 18, 0.86);
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+
+    box-shadow:
+            0 20px 60px rgba(0, 0, 0, 0.45),
+            0 0 0 1px rgba(0, 0, 0, 0.2);
+
+    font-family: "Courier New", Courier, monospace;
+}
+
+.terminal-header {
+    flex: 0 0 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 12px;
+
+    background: rgba(0, 0, 0, 0.25);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+
+    font-size: 0.75rem;
+}
+
+.terminal-title {
+    opacity: 0.8;
+}
+
+.terminal-status {
+    opacity: 0.4;
+}
+
+.terminal-body {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 0;
+
+    padding: 20px;
+
+    overflow-y: auto;
+
+    scrollbar-width: thin;
+}
+
+.terminal-output {
+    flex: 0 0 auto;
+}
+
+.terminal-entry {
+    min-height: 1.5em;
+
+    line-height: 1.5;
+
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+}
+
+.terminal-system {
+    margin-bottom: 0.25rem;
+
+    opacity: 0.8;
+}
+
+.terminal-command {
+    margin-top: 0.8rem;
+}
+
+.terminal-prompt {
+    color: #8fd3c7;
+}
+
+.terminal-command-text {
+    color: #d7d7d7;
+}
+
+.terminal-output {
+    color: #c5c5c5;
+}
+
+.terminal-input {
+    display: flex;
+    align-items: center;
+
+    margin-top: 0.8rem;
+
+    min-height: 1.5em;
+
+    line-height: 1.5;
+}
+
+.terminal-input input {
+    flex: 1;
+
+    width: 0;
+
+    margin-left: 0.5rem;
+
+    padding: 0;
+
+    border: 0;
+    outline: 0;
+
+    background: transparent;
+
+    color: #d7d7d7;
+
+    caret-color: #d7d7d7;
+
+    font: inherit;
+}
+
+@media (max-width: 700px) {
+    .terminal-window {
+        width: 96vw;
+        height: 92vh;
+    }
+
+    .terminal-body {
+        padding: 14px;
+    }
+
+    .terminal-header {
+        height: 30px;
+        flex-basis: 30px;
+    }
+}
+
+.terminal-view {
+    flex: 1 1 auto;
+
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+
+    overflow-y: auto;
+
+    color: #d7d7d7;
+}
+
+.view {
+    max-width: 900px;
+
+    line-height: 1.6;
+}
+
+.view h1 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+
+    font-size: 1.4rem;
+    font-weight: normal;
+}
+
+.view p {
+    margin: 0 0 1rem;
+}
+
+.view code {
+    color: #8fd3c7;
+}

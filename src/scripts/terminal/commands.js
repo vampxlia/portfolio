@@ -9,7 +9,7 @@ export const commands = {
             "  help               Show this message",
             "  ls                 List directory contents",
             "  cd <directory>     Change directory",
-            "  open <file>        Open a portfolio page",
+            "  open <file>        Open a file",
             "  clear              Clear the terminal",
             "  whoami             Display current user",
             "",
@@ -23,7 +23,13 @@ export const commands = {
 
     whoami: () => ({
         type: "output",
-        content: "vampxlia",
+        content:
+            "emiliana                                                   \n" +
+            "software engineer + digital artist                         \n" +
+            "\n" +
+            "> building software as a form of art and creative medium                \n" +
+            "> learning by making                                       \n" +
+            "> currently looking for a place to build cool things"
     }),
 
     about: () => ({

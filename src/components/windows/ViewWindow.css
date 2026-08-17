@@ -6,13 +6,13 @@
     top: 5vh;
     left: 25vw;
 
-    width: 55vw;
-    height: 90vh;
+    max-height: 90vh;
 
     display: flex;
     flex-direction: column;
 
     overflow: hidden;
+    scrollbar-color: #2c2c2c rgba(10, 15, 18, 0.9);
 
     color: #d7d7d7;
 

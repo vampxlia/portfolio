@@ -10,6 +10,7 @@
     flex-direction: column;
 
     overflow: hidden;
+    scrollbar-color: #2c2c2c rgba(10, 15, 18, 0.9);
 
     color: #d7d7d7;
 

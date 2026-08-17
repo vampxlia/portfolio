@@ -3,11 +3,26 @@ import Projects from "../../views/projects/Projects.jsx";
 import Resume from "../../views/resume/Resume.jsx";
 import Contact from "../../views/contact/Contact.jsx";
 
+import { projects } from "../../views/projects/projectData";
+
 import "./ViewWindow.css";
+import ProjectView from "../../views/projects/ProjectView.jsx";
+
+const projectViews = Object.fromEntries(
+    projects.map((project) => [
+        `project:${project.id}`,
+        {
+            title: project.name,
+            component: () => (
+                <ProjectView project={project} />
+            ),
+        },
+    ])
+);
 
 const views = {
     about: {
-        title: "about",
+        title: "about.txt",
         component: About,
     },
 
@@ -23,19 +38,40 @@ const views = {
     },
 
     contact: {
-        title: "contact",
+        title: "contacts.txt",
         component: Contact,
     },
 };
 
 function ViewWindow({ view, onClose }) {
-    const configuration = views[view];
+    let configuration = views[view];
+    let Content;
+    let contentProps = {};
 
-    if (!configuration) {
-        return null;
+    if (view.startsWith("project:")) {
+        const projectId = view.slice("project:".length);
+
+        const project = projects.find(
+            (item) => item.id === projectId
+        );
+
+        if (!project) {
+            return null;
+        }
+
+        configuration = {
+            title: project.name,
+        };
+
+        Content = ProjectView;
+        contentProps = { project };
+    } else {
+        if (!configuration) {
+            return null;
+        }
+
+        Content = configuration.component;
     }
-
-    const Content = configuration.component;
 
     return (
         <section className="view-window">
@@ -60,7 +96,7 @@ function ViewWindow({ view, onClose }) {
                         : "view-window-body"
                 }
             >
-                <Content />
+                <Content {...contentProps} />
             </div>
         </section>
     );

@@ -1,14 +1,13 @@
 .filesystem-window {
     position: absolute;
 
-    top: 12vh;
-    left: 3vw;
+    right: 1vw;
 
-    width: 19vw;
+    width: 20vw;
     min-width: 210px;
     max-width: 300px;
 
-    height: 72vh;
+    height: 95vh;
 
     display: flex;
     flex-direction: column;
@@ -55,7 +54,7 @@
     overflow-y: auto;
 
     font-family: "Courier New", Courier, monospace;
-    font-size: 0.8rem;
+    font-size: 1.1rem;
 }
 
 .file-tree-branch {

@@ -13,13 +13,11 @@ function Desktop() {
         <main className="desktop">
             <div className="desktop-overlay" />
 
+            <FileSystemWindow
+             currentDirectory={terminal.currentDirectory}
+             onCommand={terminal.executeCommand}
+            />
 
-            {
-                //<FileSystemWindow
-             //   currentDirectory={terminal.currentDirectory}
-             //   onCommand={terminal.executeCommand}
-            // />
-            }
 
             <TerminalWindow
                 terminal={terminal}

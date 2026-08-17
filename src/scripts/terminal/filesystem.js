@@ -1,6 +1,25 @@
+import { projects } from "../../views/projects/projectData";
+
+function createProjectNodes() {
+    return Object.fromEntries(
+        projects.map((project) => [
+            project.id,
+            {
+                type: "view",
+                name: project.id,
+
+                // Filesystem command target
+                target: project.id,
+
+                // Application/window target
+                openTarget: `project:${project.id}`,
+            },
+        ])
+    );
+}
+
 export const fileSystem = {
     type: "directory",
-
     name: "~",
 
     children: {
@@ -13,23 +32,12 @@ export const fileSystem = {
         projects: {
             type: "directory",
             name: "projects",
-
-            // The page to open when this directory is used
-            // as a portfolio application.
             openTarget: "projects",
 
-            children: {
-                "example-project": {
-                    type: "view",
-                    name: "example-project",
-                    target: "example-project",
-                },
-
-                // Add your other projects here...
-            },
+            children: createProjectNodes(),
         },
 
-        "resume.pdf": {
+        resume: {
             type: "file",
             name: "resume.pdf",
             target: "resume",
@@ -37,12 +45,11 @@ export const fileSystem = {
 
         contact: {
             type: "view",
-            name: "contact",
+            name: "contact.txt",
             target: "contact",
         },
     },
 };
-
 export function getNode(path) {
     if (path === "~" || path === "") {
         return fileSystem;

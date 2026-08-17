@@ -1,17 +1,10 @@
 .terminal-window {
     position: absolute;
 
-    /*
-    top: 5vh;
-    right: 4vw;
+    left: 1vw;
 
-    width: 72vw;
-    height: 88vh;
-     */
-
-    width: 95vw;
-    height: 90vh;
-
+    width: 77vw;
+    height: 95vh;
 
     display: flex;
     flex-direction: column;
@@ -73,6 +66,10 @@
 
 .terminal-output {
     flex: 0 0 auto;
+
+    min-height: 0;
+
+    overflow-y: auto;
 }
 
 .terminal-entry {

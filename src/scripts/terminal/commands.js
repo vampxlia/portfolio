@@ -134,7 +134,7 @@ export const commands = {
         if (!node) {
             return {
                 type: "output",
-                content: `open: ${target}: no such file`,
+                content: `open: ${target}: no such file or directory`,
             };
         }
 
@@ -145,16 +145,16 @@ export const commands = {
             };
         }
 
-        if (!node.target) {
+        if (node.target) {
             return {
-                type: "output",
-                content: `open: ${target}: cannot open directory`,
+                type: "view",
+                target: node.target,
             };
         }
 
         return {
-            type: "view",
-            target: node.target,
+            type: "output",
+            content: `open: ${target}: cannot open`,
         };
     },
 };

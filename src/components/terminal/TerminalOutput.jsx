@@ -1,6 +1,22 @@
+import {useEffect, useRef} from "react";
+
 function TerminalOutput({ history }) {
+    const outputRef = useRef(null);
+
+    useEffect(() => {
+        const element = outputRef.current;
+
+        if (!element) {
+            return;
+        }
+
+        element.scrollTop = element.scrollHeight;
+    }, [history]);
     return (
-        <div className="terminal-output">
+        <div
+            ref={outputRef}
+            className="terminal-output"
+        >
             {history.map((entry, index) => {
                 if (entry.type === "command") {
                     return (

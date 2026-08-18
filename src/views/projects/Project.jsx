@@ -1,6 +1,6 @@
 import "./Projects.css";
 
-function ProjectView({ project }) {
+function Project({ project }) {
     return (
         <article className="project-view">
             <span className="projects-path">
@@ -52,4 +52,4 @@ function ProjectView({ project }) {
     );
 }
 
-export default ProjectView;
+export default Project;

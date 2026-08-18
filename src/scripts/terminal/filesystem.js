@@ -1,4 +1,4 @@
-import { projects } from "../../views/projects/projectData";
+import { projects } from "../data/projectData.js";
 
 function createProjectNodes() {
     return Object.fromEntries(

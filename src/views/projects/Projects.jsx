@@ -1,4 +1,4 @@
-import { projects } from "./projectData";
+import {projects} from "../../scripts/data/projectData.js";
 
 import "./Projects.css";
 

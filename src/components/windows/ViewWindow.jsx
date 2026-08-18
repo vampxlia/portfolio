@@ -3,22 +3,10 @@ import Projects from "../../views/projects/Projects.jsx";
 import Resume from "../../views/resume/Resume.jsx";
 import Contact from "../../views/contact/Contact.jsx";
 
-import { projects } from "../../views/projects/projectData";
+import { projects } from "../../scripts/data/projectData.js";
 
 import "./ViewWindow.css";
-import ProjectView from "../../views/projects/ProjectView.jsx";
-
-const projectViews = Object.fromEntries(
-    projects.map((project) => [
-        `project:${project.id}`,
-        {
-            title: project.name,
-            component: () => (
-                <ProjectView project={project} />
-            ),
-        },
-    ])
-);
+import Project from "../../views/projects/Project.jsx";
 
 const views = {
     about: {
@@ -63,7 +51,7 @@ function ViewWindow({ view, onClose }) {
             title: project.name,
         };
 
-        Content = ProjectView;
+        Content = Project;
         contentProps = { project };
     } else {
         if (!configuration) {

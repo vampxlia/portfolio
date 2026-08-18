@@ -59,9 +59,7 @@ function FileTree({
                         <span className="file-tree-icon">
                             {node.type === "directory"
                                 ? "▸"
-                                : node.type === "file"
-                                    ? "□"
-                                    : "·"}
+                                : "·"}
                         </span>
 
                         <span>{name}</span>

@@ -31,7 +31,7 @@ const views = {
     },
 };
 
-function ViewWindow({ view, onClose }) {
+function ViewWindow({ view, section, onClose }) {
     let configuration = views[view];
     let Content;
     let contentProps = {};
@@ -53,6 +53,12 @@ function ViewWindow({ view, onClose }) {
 
         Content = Project;
         contentProps = { project };
+    } else if (view === "about") {
+        Content = About;
+
+        contentProps = {
+            section,
+        };
     } else {
         if (!configuration) {
             return null;

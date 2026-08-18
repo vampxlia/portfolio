@@ -60,14 +60,14 @@
     color: rgba(215, 215, 215, 0.85);
 }
 
-.about-skills {
+.about-toolbox {
     display: flex;
     flex-wrap: wrap;
 
     gap: 0.5rem;
 }
 
-.about-skills span {
+.about-toolbox span {
     padding: 0.3rem 0.6rem;
 
     border: 1px solid rgba(143, 211, 199, 0.25);

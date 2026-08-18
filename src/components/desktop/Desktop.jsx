@@ -25,7 +25,8 @@ function Desktop() {
 
             {terminal.openWindow && (
                 <ViewWindow
-                    view={terminal.openWindow}
+                    view={terminal.openWindow.target}
+                    section={terminal.openWindow.section}
                     onClose={() => terminal.closeWindow()}
                 />
             )}

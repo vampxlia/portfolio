@@ -142,6 +142,7 @@ export const commands = {
             return {
                 type: "view",
                 target: node.openTarget,
+                section: node.section ?? null,
             };
         }
 
@@ -149,6 +150,7 @@ export const commands = {
             return {
                 type: "view",
                 target: node.target,
+                section: node.section ?? null,
             };
         }
 

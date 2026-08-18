@@ -1,4 +1,5 @@
 import { projects } from "../data/projectData.js";
+import {aboutSections} from "../data/aboutData.js";
 
 function createProjectNodes() {
     return Object.fromEntries(
@@ -18,15 +19,32 @@ function createProjectNodes() {
     );
 }
 
+function createAboutNodes() {
+    return Object.fromEntries(
+        aboutSections.map((section) => [
+            section.id,
+            {
+                type: "view",
+                name: section.name,
+                target: section.id,
+                openTarget: "about",
+                section: section.id,
+            },
+        ])
+    );
+}
+
 export const fileSystem = {
     type: "directory",
     name: "~",
 
     children: {
         about: {
-            type: "view",
+            type: "directory",
             name: "about",
-            target: "about",
+            openTarget: "about",
+
+            children: createAboutNodes(),
         },
 
         projects: {
@@ -39,7 +57,7 @@ export const fileSystem = {
 
         resume: {
             type: "file",
-            name: "resume.pdf",
+            name: "resume",
             target: "resume",
         },
 

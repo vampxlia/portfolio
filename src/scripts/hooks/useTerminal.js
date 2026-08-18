@@ -60,7 +60,10 @@ function useTerminal() {
             }
 
             if (result.type === "view") {
-                setOpenWindow(result.target);
+                setOpenWindow({
+                    target: result.target,
+                    section: result.section ?? null,
+                });
             }
 
             if (result.type === "directory") {

@@ -5,7 +5,7 @@ function Resume() {
         <div className="resume">
             <iframe
                 className="resume-pdf"
-                src="/resume.pdf"
+                src="./resume.pdf"
                 title="Resume"
             />
         </div>

@@ -1,22 +1,23 @@
 import About from "../../views/about/About.jsx";
-import Projects from "../../views/projects/Projects.jsx";
 import Resume from "../../views/resume/Resume.jsx";
 import Contact from "../../views/contact/Contact.jsx";
+import Welcome from "../../views/welcome/Welcome";
+import Project from "../../views/projects/Project.jsx";
 
 import { projects } from "../../scripts/data/projectData.js";
 
 import "./ViewWindow.css";
-import Project from "../../views/projects/Project.jsx";
+
 
 const views = {
-    about: {
-        title: "about.txt",
-        component: About,
+    welcome: {
+        title: "welcome.txt",
+        component: Welcome,
     },
 
-    projects: {
-        title: "projects",
-        component: Projects,
+    about: {
+        title: "about",
+        component: About,
     },
 
     resume: {
@@ -31,7 +32,7 @@ const views = {
     },
 };
 
-function ViewWindow({ view, section, onClose }) {
+function ViewWindow({ view, section, onCommand, onClose }) {
     let configuration = views[view];
     let Content;
     let contentProps = {};
@@ -58,6 +59,12 @@ function ViewWindow({ view, section, onClose }) {
 
         contentProps = {
             section,
+        };
+    } else if (view === "projects") {
+        Content = Projects;
+
+        contentProps = {
+            onCommand,
         };
     } else {
         if (!configuration) {

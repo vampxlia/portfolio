@@ -27,6 +27,7 @@ function Desktop() {
                 <ViewWindow
                     view={terminal.openWindow.target}
                     section={terminal.openWindow.section}
+                    onCommand={terminal.executeCommand}
                     onClose={() => terminal.closeWindow()}
                 />
             )}

@@ -17,7 +17,10 @@ const INITIAL_HISTORY = [
 function useTerminal() {
     const [history, setHistory] = useState(INITIAL_HISTORY);
     const [currentDirectory, setCurrentDirectory] = useState("~");
-    const [openWindow, setOpenWindow] = useState(null);
+    const [openWindow, setOpenWindow] = useState({
+        target: "welcome",
+        section: null,
+    });
 
     const closeWindow = () => {
         setOpenWindow(null);

@@ -12,12 +12,6 @@ export const commands = {
             "  open <file>        Open a file",
             "  clear              Clear the terminal",
             "  whoami             Display current user",
-            "",
-            "Navigation shortcuts:",
-            "  about              Open About Me",
-            "  projects           Open Projects",
-            "  resume             Open Resume",
-            "  contact            Open Contact",
         ].join("\n"),
     }),
 
@@ -27,29 +21,9 @@ export const commands = {
             "emiliana                                                   \n" +
             "software engineer + digital artist                         \n" +
             "\n" +
-            "> building software as a form of art and creative medium                \n" +
+            "> building software as a form of art and creative medium   \n" +
             "> learning by making                                       \n" +
             "> currently looking for a place to build cool things"
-    }),
-
-    about: () => ({
-        type: "view",
-        target: "about",
-    }),
-
-    projects: () => ({
-        type: "view",
-        target: "projects",
-    }),
-
-    resume: () => ({
-        type: "view",
-        target: "resume",
-    }),
-
-    contact: () => ({
-        type: "view",
-        target: "contact",
     }),
 
     clear: () => ({

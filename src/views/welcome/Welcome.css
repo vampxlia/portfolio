@@ -1,0 +1,89 @@
+.welcome {
+    max-width: 720px;
+}
+
+.welcome-header {
+    margin-bottom: 2rem;
+}
+
+.welcome-path {
+    display: block;
+
+    margin-bottom: 0.75rem;
+
+    font-size: 0.75rem;
+
+    opacity: 0.45;
+}
+
+.welcome h1 {
+    margin: 0;
+
+    font-size: 1.8rem;
+    font-weight: normal;
+}
+
+.welcome-header p {
+    margin-top: 0.5rem;
+
+    opacity: 0.6;
+}
+
+.welcome-section {
+    margin-top: 2rem;
+}
+
+.welcome-section h2 {
+    margin-bottom: 0.75rem;
+
+    font-size: 0.9rem;
+    font-weight: normal;
+}
+
+.welcome-section p {
+    max-width: 650px;
+
+    line-height: 1.7;
+
+    opacity: 0.75;
+}
+
+.welcome-commands {
+    display: flex;
+    flex-direction: column;
+
+    gap: 0.5rem;
+
+    margin-top: 1rem;
+}
+
+.welcome-commands div {
+    display: flex;
+    gap: 1.25rem;
+}
+
+.welcome-commands code {
+    min-width: 140px;
+
+    color: #8fd3c7;
+}
+
+.welcome-commands span {
+    opacity: 0.55;
+}
+
+.welcome-footer {
+    margin-top: 3rem;
+
+    padding-top: 1rem;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+    font-size: 0.75rem;
+
+    opacity: 0.6;
+}
+
+.welcome-footer code {
+    color: #8fd3c7;
+}

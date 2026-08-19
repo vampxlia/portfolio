@@ -39,6 +39,12 @@ export const fileSystem = {
     name: "~",
 
     children: {
+        welcome: {
+            type: "view",
+            name: "welcome",
+            target: "welcome",
+        },
+        
         about: {
             type: "directory",
             name: "about",

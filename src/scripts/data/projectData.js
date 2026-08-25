@@ -18,6 +18,7 @@ export const projects = [
         ],
         github: "https://github.com/vampxlia/Course-Certificate-Generation-System",
         featured: true,
+        media: ["certificate-generator-demo"]
     },
 
     {
@@ -33,6 +34,7 @@ export const projects = [
         ],
         github: "https://github.com/vampxlia/Ant-Colony-and-Pheromone-Simulation",
         featured: true,
+        media: ["ant-colony-demo"]
     },
 
     {
@@ -48,6 +50,7 @@ export const projects = [
         ],
         github: "https://github.com/vampxlia/Arduino-Gyroscope",
         featured: true,
+        media: ["arduino-gyroscope-img"]
     },
 
     {
@@ -63,5 +66,6 @@ export const projects = [
         ],
         github: "https://github.com/vampxlia/Flappy-Kitten",
         featured: true,
+        media: ["flappy-kitten-demo"]
     }
 ];

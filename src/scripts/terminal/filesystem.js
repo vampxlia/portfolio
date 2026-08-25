@@ -1,5 +1,6 @@
 import { projects } from "../data/projectData.js";
 import {aboutSections} from "../data/aboutData.js";
+import {media} from "../data/mediaData.js";
 
 function createProjectNodes() {
     return Object.fromEntries(
@@ -8,12 +9,24 @@ function createProjectNodes() {
             {
                 type: "view",
                 name: project.id,
-
                 // Filesystem command target
                 target: project.id,
-
                 // Application/window target
                 openTarget: `project:${project.id}`,
+            },
+        ])
+    );
+}
+
+function createMediaNodes() {
+    return Object.fromEntries(
+        media.map((item) => [
+            item.name,
+            {
+                type: "file",
+                name: item.name,
+                openTarget: `media:${item.id}`,
+                target: item.id,
             },
         ])
     );
@@ -58,7 +71,14 @@ export const fileSystem = {
             name: "projects",
             openTarget: "projects",
 
-            children: createProjectNodes(),
+            children: {
+                ... createProjectNodes(),
+                media: {
+                    type: "directory",
+                    name: "media",
+                    children: createMediaNodes(),
+                }
+            },
         },
 
         resume: {

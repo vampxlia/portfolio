@@ -22,6 +22,20 @@
     color: #d7d7d7;
 }
 
+.project-media img,
+.project-media video {
+    display: block;
+    margin: 0 auto;
+
+    max-width: 100%;
+    max-height: 30vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}
+
 .project-featured {
     padding: 0.15rem 0.4rem;
 
@@ -51,9 +65,14 @@
 }
 
 .project-technologies span {
-    color: rgba(215, 215, 215, 0.45);
+    padding: 0.3rem 0.6rem;
 
-    font-size: 0.7rem;
+    border: 1px solid rgba(143, 211, 199, 0.25);
+    border-radius: 3px;
+
+    color: #8fd3c7;
+
+    font-size: 0.75rem;
 }
 
 .project-link {
@@ -63,7 +82,7 @@
 
     color: #8fd3c7;
 
-    font-size: 0.75rem;
+    font-size: 1rem;
 
     text-decoration: none;
 }

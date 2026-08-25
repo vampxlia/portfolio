@@ -1,0 +1,11 @@
+
+.media-viewer img,
+.media-content video {
+    max-width: 80vw;
+    max-height: 70vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}

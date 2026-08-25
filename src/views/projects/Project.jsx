@@ -1,6 +1,13 @@
 import "./Project.css";
+import {media} from "../../scripts/data/mediaData.js";
 
 function Project({ project }) {
+    const projectMedia = media.filter(
+        (item) =>
+            project.media?.includes(item.id)
+    );
+
+
     return (
         <article className="project-view">
             <span className="projects-path">
@@ -12,6 +19,16 @@ function Project({ project }) {
             <p className="project-description">
                 {project.description}
             </p>
+
+            <div className="project-media">
+                {projectMedia.map((item) => (
+                    item.type === "video" ? (
+                        <video src={item.src} key={item.id} controls />
+                    ) : (
+                        <img src={item.src} key={item.id} alt={item.alt} />
+                    )
+                ))}
+            </div>
 
             <section>
                 <h2>technologies</h2>
@@ -34,7 +51,7 @@ function Project({ project }) {
                     target="_blank"
                     rel="noreferrer"
                 >
-                    → github
+                    → Open the Repository
                 </a>
             )}
 

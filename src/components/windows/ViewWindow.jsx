@@ -3,31 +3,30 @@ import Resume from "../../views/resume/Resume.jsx";
 import Contact from "../../views/contact/Contact.jsx";
 import Welcome from "../../views/welcome/Welcome";
 import Project from "../../views/projects/Project.jsx";
+import MediaViewer from "../../views/media/MediaViewer.jsx";
 
 import { projects } from "../../scripts/data/projectData.js";
+import { media } from "../../scripts/data/mediaData.js";
 
 import "./ViewWindow.css";
 
-
+// CLEANUP: Removed the static "media" object since media configurations are now built dynamically below.
 const views = {
     welcome: {
-        title: "welcome.txt",
+        title: "welcome",
         component: Welcome,
     },
-
     about: {
         title: "about",
         component: About,
     },
-
     resume: {
-        title: "resume.pdf",
+        title: "resume",
         component: Resume,
         fullContent: true
     },
-
     contact: {
-        title: "contacts.txt",
+        title: "contacts",
         component: Contact,
     },
 };
@@ -39,38 +38,27 @@ function ViewWindow({ view, section, onCommand, onClose }) {
 
     if (view.startsWith("project:")) {
         const projectId = view.slice("project:".length);
-
-        const project = projects.find(
-            (item) => item.id === projectId
-        );
-
-        if (!project) {
-            return null;
-        }
-
-        configuration = {
-            title: project.name,
-        };
-
+        const project = projects.find((item) => item.id === projectId);
+        if (!project) { return null; }
+        configuration = { title: project.name };
         Content = Project;
         contentProps = { project };
+
+    } else if (view.startsWith("media:")) {
+        const mediaId = view.slice("media:".length);
+        const mediaItem = media.find((item) => item.id === mediaId);
+
+        if (!mediaItem) { return null; }
+
+        configuration = { title: mediaItem.name };
+        Content = MediaViewer;
+        contentProps = { mediaId };
+
     } else if (view === "about") {
         Content = About;
-
-        contentProps = {
-            section,
-        };
-    } else if (view === "projects") {
-        Content = Projects;
-
-        contentProps = {
-            onCommand,
-        };
+        contentProps = { section };
     } else {
-        if (!configuration) {
-            return null;
-        }
-
+        if (!configuration) { return null; }
         Content = configuration.component;
     }
 
@@ -80,7 +68,6 @@ function ViewWindow({ view, section, onCommand, onClose }) {
                 <div className="view-window-title">
                     {configuration.title}
                 </div>
-
                 <button
                     className="view-window-close"
                     onClick={onClose}

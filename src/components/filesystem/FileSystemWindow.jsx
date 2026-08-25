@@ -6,8 +6,10 @@ function FileSystemWindow({currentDirectory, onCommand,}) {
     return (
         <section className="filesystem-window">
             <header className="filesystem-header">
-                <span>file system</span>
-                <span>{currentDirectory}</span>
+                <div className="filesystem-title">
+                    <span>files</span>
+                    <span> {currentDirectory}</span>
+                </div>
             </header>
 
             <FileTree

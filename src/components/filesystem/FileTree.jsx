@@ -1,4 +1,4 @@
-import {getDirectory,} from "../../scripts/terminal/filesystem";
+    import {getDirectory,} from "../../scripts/terminal/filesystem";
 
 function FileTree({
                       currentDirectory,
@@ -19,10 +19,10 @@ function FileTree({
     return (
         <div className="file-tree">
             <button
-                className="file-tree-location"
+                className="file-tree-item"
                 onClick={() => onCommand("cd ~")}
             >
-                ~/portfolio
+                ~/dev-portfolio
             </button>
 
             {currentDirectory !== "~" && (

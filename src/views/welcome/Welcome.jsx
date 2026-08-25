@@ -23,7 +23,7 @@ function Welcome() {
                     as a small Linux-inspired desktop.
                     Instead of navigating a traditional website,
                     you can explore it through the terminal or
-                    the filesystem.
+                    the file explorer.
                 </p>
             </section>
 
@@ -71,7 +71,7 @@ function Welcome() {
                 <h2>or...</h2>
 
                 <p>
-                    You can use the filesystem on the right
+                    You can use the file explorer on the right
                     if you'd rather click your way around.
                     It performs the same actions as the
                     corresponding terminal commands.

@@ -5,7 +5,6 @@
 
     width: 20vw;
     min-width: 210px;
-    max-width: 300px;
 
     height: 95vh;
 
@@ -39,11 +38,15 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
 
     font-family: "Courier New", Courier, monospace;
-    font-size: 0.7rem;
+    font-size: 0.9rem;
+}
+
+.filesystem-title {
+    opacity: 0.9;
 }
 
 .filesystem-header span:last-child {
-    opacity: 0.4;
+    opacity: 0.7;
 }
 
 .file-tree {

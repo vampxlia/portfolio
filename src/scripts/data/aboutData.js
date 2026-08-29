@@ -23,9 +23,9 @@ export const aboutSections = [
         title: "Learning",
     },
 
-    {
-        id: "philosophy",
-        name: "philosophy",
-        title: "Philosophy",
-    },
+    //{
+    //    id: "philosophy",
+    //    name: "philosophy",
+    //    title: "Philosophy",
+    //},
 ];

@@ -199,7 +199,7 @@ function About({ section }) {
                 ref={registerSection("philosophy")}
                 id="about-philosophy"
             >
-                <h2>~/philosophy</h2>
+                {/*<h2>~/philosophy</h2>}
 
                 {/* existing philosophy content */}
             </section>
